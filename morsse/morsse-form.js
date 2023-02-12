@@ -15,13 +15,13 @@ function MorsseForm_Worker(form, api_key, MorsseForm_xhr) {
     var after_next = form_config.next;
     var action_url = form.getAttribute('action');
 
-    var submit_element = form.querySelector(form_config.submit);
+    var submit_element = form.querySelector('[data-morsse-submit]');
     var submit_origins = submit_element.innerHTML;
     var submit_load = form_config.loading;
         if(!submit_load) { submit_load = '<span class="load mini">&nbsp;</span>'; }
 
     var form_restart = false;
-    if(form.getAttribute('data-morsse-form-opts') !== null) { form_restart = true; }
+    if(form.getAttribute('data-morsse-restart') !== null) { form_restart = true; }
 
     form.addEventListener('submit', function(e) {
         var xhr_form = new FormData(form);
