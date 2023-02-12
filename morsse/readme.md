@@ -40,7 +40,7 @@ It is possible to give several parameters in JSON format in the `data-morsse-for
 
 **Multiple send**
 
-It is possible to allow several form submissions by adding `data-morsse-restart` in the `form` tag, during processing if no error is returned by the server, Morsse will empty all the fields and unblock the send button :
+It is possible to allow several form submissions by adding `data-morsse-restart` in the `form` tag, during processing if no error is returned by the server, Morsse will empty all fields and unblock the send button :
 ```html
 <form method="" action="" enctype="multipart/form-data" data-morsse-form data-morsse-restart>
 ```
