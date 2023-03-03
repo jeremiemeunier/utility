@@ -43,11 +43,11 @@ function PaonSelect_Worker(item) {
                 var view = list.parentNode.querySelector('[data-paon-value]');
                 var selected = list.querySelector('li.paon--selected');
                 var option = e.target;
-                var value = option.innerText;
+                var value = option.innerHTML;
 
                 selected.classList.remove('paon--selected');
                 option.classList.add('paon--selected');
-                view.innerText = value;
+                view.innerHTML = value;
 
                 PaonFunctionBridge(e);
             });
