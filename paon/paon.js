@@ -5,9 +5,9 @@ function PaonSelect_Initialize() {
 
         var paon_value = arr_paon_select[i].querySelector('[data-paon-value]');
         var paon_selected = arr_paon_select[i].querySelector('ul li.paon--selected');
-        var paon_selected_value = paon_selected.innerText;
+        var paon_selected_value = paon_selected.innerHTML;
 
-        paon_value.innerText = paon_selected_value;
+        paon_value.innerHTML = paon_selected_value;
 	}
 }
 
@@ -39,10 +39,16 @@ function PaonSelect_Worker(item) {
     for(var i = 0;i < arr_paon_options.length; i++) {
         if(!arr_paon_options[i].classList.contains('paon--selected')) {
             arr_paon_options[i].addEventListener('click', function(e) {
-                var list = e.srcElement.offsetParent;
+                var list = e.srcElement.offsetParent.offsetParent;
                 var view = list.parentNode.querySelector('[data-paon-value]');
                 var selected = list.querySelector('li.paon--selected');
-                var option = e.target;
+                var option = '';
+                
+                if(e.target.tagName != 'LI') {
+                    option = e.target.parentNode;
+                }
+                else { option = e.target; }
+
                 var value = option.innerHTML;
 
                 selected.classList.remove('paon--selected');
