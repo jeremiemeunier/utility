@@ -8,7 +8,7 @@
 
 **How does paon.js work ?**
 
-It's very simple, just follow the following HTML structure and paon will do the rest :D. A CSS sheet is available so you don't have to style yourself or at least have a base.
+It's very simple, just follow the following HTML structure and paon will do the rest 😀. A CSS sheet is available so you don't have to style yourself or at least have a base.
 
 **HTML Structure**
 
