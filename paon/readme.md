@@ -14,7 +14,7 @@ It's very simple, just follow the following HTML structure and paon will do the 
 
 ```html
 <div class="paon--select paon--list-inactive" data-paon-select>
-  <div class="paon--view" data-paon-view><p data-paon-value>{{paon-selected}}</p><span class="i-ico icon right material-icons">&#xE5C7;</span></div>
+  <div class="paon--view" data-paon-view><p data-paon-value>{{paon-selected}}</p><span class="icon">&#xE5C7;</span></div>
   <ul class="paon--list">
     <li class="paon--option"><span>20 par page</span></li>
     <li class="paon--option"><span>50 par page</span></li>
