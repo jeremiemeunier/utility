@@ -14,12 +14,12 @@ It's very simple, just follow the following HTML structure and paon will do the 
 
 ```html
 <div class="paon--select paon--list-inactive" data-paon-select>
-  <p class="paon--view" data-paon-view><span data-paon-value>{{paon-selected}}</span><span class="i-ico icon right material-icons">&#xE5C7;</span></p>
+  <div class="paon--view" data-paon-view><p data-paon-value>{{paon-selected}}</p><span class="i-ico icon right material-icons">&#xE5C7;</span></div>
   <ul class="paon--list">
-    <li class="paon--option">20 par page</li>
-    <li class="paon--option">50 par page</li>
-    <li class="paon--option paon--selected">100 par page</li>
-    <li class="paon--option">200 par page</li>
+    <li class="paon--option"><span>20 par page</span></li>
+    <li class="paon--option"><span>50 par page</span></li>
+    <li class="paon--option paon--selected"><span>100 par page</span></li>
+    <li class="paon--option"><span>200 par page</span></li>
   </ul>
 </div>
 ```
