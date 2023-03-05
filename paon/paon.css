@@ -10,7 +10,7 @@ div.paon--select {
 	color: #F0F0F0;
     transition: all .3s;
 }
-div.paon--select p.paon--view {
+div.paon--select div.paon--view {
 	display: grid;
 	align-items: center;
 	grid-template-columns: 1fr 48px;
@@ -20,7 +20,19 @@ div.paon--select p.paon--view {
 
     cursor: pointer;
 }
-div.paon--select p.paon--view span.icon {
+div.paon--select div.paon--view > p {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: min-content;
+	grid-column-gap: 8px;
+	align-items: center;
+
+	padding: 0;
+	overflow: hidden;
+
+	white-space: nowrap;
+}
+div.paon--select div.paon--view span.icon {
 	display: grid;
 	align-items: center;
 	justify-items: center;
@@ -33,44 +45,30 @@ div.paon--select ul.paon--list {
 	position: absolute;
 	top: calc(100% + 4px);
 	left: 0; right: 0;
-	z-index: 999;
+	z-index: 99;
 
 	border: 2px solid #20242D;
 	background: #20242D;
 	border-radius: 8px;
-	overflow: hidden;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+	overflow-y: auto;
+	overflow-x: hidden;
+    box-shadow: 0 0 16px rgba(0, 0, 0, .5);
 }
 div.paon--select ul.paon--list li.paon--option {
 	display: grid;
-	align-content: center;
+	align-items: center;
 	
-	height: 32px;
-	padding: 0 16px;
+	min-height: 32px;
+	padding: 8px 16px;
 	
 	cursor: pointer;
+}
+div.paon--select ul.paon--list li.paon--option.paon--tag {
+	grid-auto-flow: column;
+	grid-template-columns: min-content;
+	grid-column-gap: 8px;
 }
 div.paon--select ul.paon--list li.paon--option:hover,
 div.paon--select ul.paon--list li.paon--option.paon--selected {
 	background: #151923;
-}
-
-@keyframes paon--list-enter {
-	0% {
-		display: grid;
-		opacity: 0;
-		transform: translatey(16px);
-	}
-	10% { opacity: 0; transform: translatey(16px); }
-	100% { opacity: 1; transform: translatey(0px); }
-}
-
-@keyframes paon--list-leave {
-	0% {
-		display: grid;
-		opacity: 1;
-		transform: translatey(0);
-	}
-	90% { opacity: 0; transform: translatey(16px); }
-	100% { display: none; opacity: 0; transform: translatey(16px); }
 }
