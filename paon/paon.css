@@ -48,6 +48,7 @@ div.paon--select ul.paon--list {
 	z-index: 99;
 
 	border: 2px solid #20242D;
+	max-height: 400px;
 	background: #20242D;
 	border-radius: 8px;
 	overflow-y: auto;
