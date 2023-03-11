@@ -25,14 +25,12 @@ function MorsseAction_Worker(e) {
         actionForm_xhr.open('POST', actionUrl, true);
         actionForm_xhr.send(actionForm_formData);
 
-        actionForm_xhr.onreadystatechange(function() {
+        actionForm_xhr.onreadystatechange = function() {
             if(actionForm_xhr.readyState === 4 && actionForm_xhr.status === 200) {
-                if(i === arr_form.length - 1) {
-                    window.setTimeout(function() {
-                        location.reload();
-                    }, 200);
-                }
+                window.setTimeout(function() {
+                    location.reload();
+                }, 200);
             }
-        });
+        };
     }
 }
