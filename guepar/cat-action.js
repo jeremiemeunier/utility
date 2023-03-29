@@ -1,6 +1,6 @@
 function CatAction_Initialize() {
-    var arr_link = document.querySelectorAll('[data-cat-action]');
-    for(var i = 0;i < arr_link.length;i++) {
+    let arr_link = document.querySelectorAll('[data-cat-action]');
+    for(let i = 0;i < arr_link.length;i++) {
         CatAction_Binder(arr_link[i]);
     }
 }
@@ -11,29 +11,28 @@ function CatAction_Binder(trigger) {
 
 function CatAction_Worker(e) {
     e.preventDefault();
-    var CatAction_xhr = new XMLHttpRequest();
-    var trigger = e.target;
-    var trigger_link;
+    let CatAction_xhr = new XMLHttpRequest();
+    let trigger = e.target;
+    let trigger_link;
 
-    var url = null;
-    var params = null;
+    let url = null;
+    let params = null;
 
     if(trigger.nodeName === 'A') {
-        var url = trigger.getAttribute('href');
-        var params = trigger.getAttribute('data-cat-action');
-        trigger_link 
+        url = trigger.getAttribute('href');
+        params = trigger.getAttribute('data-cat-action');
     }
     else {
-        var url = trigger.parentNode.getAttribute('href');
-        var params = trigger.parentNode.getAttribute('data-cat-action');
+        url = trigger.parentNode.getAttribute('href');
+        params = trigger.parentNode.getAttribute('data-cat-action');
     }
 
 
 
-    var params = JSON.parse(params);
+    params = JSON.parse(params);
 
     if(params.reload === true) {
-        window.setTimeout(function() {
+        window.setTimeout(() => {
             location.reload();
         }, 200);
     }

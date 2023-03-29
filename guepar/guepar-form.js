@@ -1,26 +1,26 @@
-function GueparForm_Initialize() {
-    var arr_forms = document.querySelectorAll('[data-guepar-form]');
-    for(var i = 0;i < arr_forms.length;i++) {
+const GueparForm_Initialize = () => {
+    let arr_forms = document.querySelectorAll('[data-guepar-form]');
+    for(let i = 0;i < arr_forms.length;i++) {
         GueparForm_Binder(arr_forms[i]);
     }
 }
 
-function GueparForm_Binder(form) {
-    var arr_form_trigger = form.querySelectorAll('[data-guepar-trigger]');
-    for(var i = 0;i < arr_form_trigger.length;i++) {
+const GueparForm_Binder = (form) => {
+    let arr_form_trigger = form.querySelectorAll('[data-guepar-trigger]');
+    for(let i = 0;i < arr_form_trigger.length;i++) {
         arr_form_trigger[i].addEventListener('change', GueparForm_Worker);
     }
 }
 
-function GueparForm_Worker(e) {
+const GueparForm_Worker = (e) => {
     e.preventDefault();
-    var GueparForm_xhr = new XMLHttpRequest();
+    let GueparForm_xhr = new XMLHttpRequest();
 
-    var trigger = e.target;
-    var form_parent = trigger.parentNode;
-    var xhr_form = new FormData(form_parent);
+    let trigger = e.target;
+    let form_parent = trigger.parentNode;
+    let xhr_form = new FormData(form_parent);
 
-    GueparForm_xhr.onreadystatechange = function() {
+    GueparForm_xhr.onreadystatechange = () => {
         form_parent.classList.remove('guepar-form-error');
 
         if(GueparForm_xhr.readyState === 4) {
@@ -30,7 +30,7 @@ function GueparForm_Worker(e) {
             else {
                 form_parent.classList.add('guepar-form-success');
 
-                window.setTimeout(function() {
+                window.setTimeout(() => {
                     form_parent.classList.remove('guepar-form-success');
                 }, 2000);
             }
